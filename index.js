@@ -15,23 +15,42 @@ $("video source").each(function() {
 window.onload = deferVideo;
 
 const images = document.querySelector('.anim');
+const images2 = document.querySelector('.fiu')
+const images3 = document.querySelector('.fiu2')
 const options = {};
 
 const observer = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
     if(entry.intersectionRatio > 0){
-      entry.target.style.animation = 'anim1 3s forwards ease-out';
+      entry.target.style.animation = 'anim1 2s forwards ease-out';
     }else{
       entry.target.style.animation = 'none';
     }
   });
 }, options);
-  // if(entries.intersectionRatio > 0){
-  //   entries.target.style.animation = 'anim1 2s forwards ease-out';
-  // }else{
-  //   entries.target.style.animation = 'none';
-  // }
+
+const observer2 = new IntersectionObserver((entries, observer2) => {
+  entries.forEach(entry => {
+    if(entry.intersectionRatio > 0){
+      entry.target.style.animation = 'fadeInUp 1s forwards ease-out';
+
+    }else{
+      entry.target.style.animation = 'none';
+    }
+  });
+}, options);
+
+const observer3 = new IntersectionObserver((entries, observer3) => {
+  entries.forEach(entry => {
+    if(entry.intersectionRatio > 0){
+      entry.target.style.animation = 'fadeInUp 1s forwards ease-out';
+
+    }else{
+      entry.target.style.animation = 'none';
+    }
+  });
+}, options);
 
 observer.observe(images);
-
-
+observer2.observe(images2);
+observer3.observe(images3);
